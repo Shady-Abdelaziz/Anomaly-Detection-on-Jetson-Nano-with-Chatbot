@@ -1,93 +1,111 @@
 # Anomaly Detection on Jetson Nano with Chatbot
 
-![Project Banner](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Jetson%20Nano/jetson.jpg?raw=true) <!-- Replace with an actual banner image -->
+This project implements an anomaly detection system capable of identifying multiple classes of anomalies (e.g., fighting, robbery, vandalism) using a pre-trained model deployed on a Jetson Nano. The system integrates with a chatbot for reporting incidents and generating summaries via NLP.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Model Details](#model-details)
+- [Hardware Requirements](#hardware-requirements)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Overview
+This repository combines computer vision, anomaly detection, and natural language processing to detect and report unusual activities. Leveraging a Jetson Nano, the system processes live video streams, identifies anomalies, and triggers chatbot-generated reports using an LLM (Large Language Model).
 
-This project is a real-time **Anomaly Detection System** designed to monitor video feeds using **NVIDIA Jetson Nano** and an **IP camera**. It leverages advanced AI architectures and state-of-the-art models to identify anomalies, generate reports, and enable interactive querying through a chatbot.
+### Key Highlights
+- Real-time video anomaly detection.
+- Supports 60 FPS for inference.
+- Generates 30-second video clips of detected anomalies.
+- Uses an LLM to summarize video content and produce detailed incident reports.
+- Compatible with Zavio cameras.
 
-### Key Features
+## Features
+- **Multi-Class Anomaly Detection**: Identifies activities like abuse, assault, robbery, vandalism, and more.
+- **Real-time Performance**: Achieve 60 FPS for live video inference.
+- **30-second Video Clips**: Saves and uploads a 30-second clip of detected events.
+- **Chatbot Integration**: Sends alerts and generates reports for detected anomalies.
 
-- **Anomaly Detection**:
-  - Leveraged **MobileNet** and **BiLSTM** architectures.
-  - Trained on the **UCF Anomaly Detection dataset**.
-  - Achieved real-time monitoring at **30 FPS**.
-- **Deployment**:
-  - Utilized **NVIDIA Jetson Nano** for edge inference.
-  - Integrated with an **IP camera** for continuous video streaming.
-- **Data Management**:
-  - Automatically uploads detected anomalies to **Google Drive**.
-  - Creates a structured database of anomaly videos.
-- **Report Generation**:
-  - Uses **Gemini LLM** to generate detailed reports of detected events.
-  - Enables easy retrieval and analysis of reports.
-- **Alerts**:
-  - Sends **email warnings** for immediate notification of anomalies.
-- **Interactive Chatbot**:
-  - Implemented a chatbot using **Retrieval-Augmented Generation (RAG)**.
-  - Allows users to interactively query stored reports for detailed insights.
-
----
-
-## Demo Video
-
-Watch the demo video explaining the entire project:
-
-<video width="800" controls>
-  <source src="[https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Anomaly%20Detection%20Demo.mp4](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Anomaly%20Detection%20Demo.mp4)?raw=true" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
----
-
-## System Architecture
-
-### Components
-
-1. **Model**:
-   - Backbone: **MobileNet** for feature extraction.
-   - Sequence Learning: **BiLSTM** for temporal anomaly detection.
-
-2. **Deployment**:
-   - **Jetson Nano** for edge AI.
-   - **IP Camera** for real-time video feeds.
-
-3. **Reporting**:
-   - **LLM Gemini Model** for video summarization and report generation.
-
-4. **Alerts**:
-   - **Email API** for warning notifications.
-
-5. **Chatbot**:
-   - **RAG Framework** for querying generated reports.
-
-### Workflow
-
-1. Real-time video streaming is processed using the **MobileNet-BiLSTM** pipeline on Jetson Nano.
-2. Detected anomalies are:
-   - Saved as short video clips.
-   - Uploaded to **Google Drive**.
-3. Anomaly clips are analyzed, and reports are generated using **Gemini LLM**.
-4. **Email alerts** notify users of detected anomalies.
-5. Reports are stored in a database, accessible via a **chatbot**.
-
----
-
-## Installation and Setup
+## Setup and Installation
 
 ### Prerequisites
+- Jetson Nano with a compatible OS installed.
+- Zavio camera (or any compatible camera source).
+- Python 3.8 or higher.
+- Required Python libraries: OpenCV, TensorFlow, PyTorch, NLTK, and others listed in `requirements.txt`.
 
-- NVIDIA Jetson Nano (configured and updated with JetPack)
-- Python 3.8+
-- IP Camera with RTSP support
-- Google Drive API credentials
-- SMTP server credentials for email alerts
+### Installation Steps
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot.git
+   cd Anomaly-Detection-on-Jetson-Nano-with-Chatbot
+   ```
 
-### Dependencies
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Install the required Python libraries:
+3. Set up your Jetson Nano for real-time video input:
+   - Ensure your camera is connected and accessible.
 
+4. Run the detection script:
+   ```bash
+   python detect_anomalies.py
+   ```
+
+## Usage
+
+After installation, you can start the anomaly detection system. When anomalies are detected, a report will be generated, and a chatbot will notify you with a summary of the event.
+
+### Run the chatbot integration:
 ```bash
-pip install tensorflow opencv-python pillow requests langchain transformers
+python chatbot_integration.py
+```
 
+### Configuration
+
+Adjust the configuration settings in `config.json` to set video input, threshold for anomaly detection, and other parameters.
+
+## Model Details
+
+This project uses a pre-trained model for anomaly detection. The model is capable of recognizing various categories such as:
+
+- Abuse
+- Arrest
+- Arson
+- Assault
+- Burglary
+- Explosion
+- Fighting
+- Normal
+- RoadAccidents
+- Robbery
+- Shooting
+- Shoplifting
+- Stealing
+- Vandalism
+
+### Loading the model:
+```python
+from keras.models import load_model
+model = load_model('model.keras')
+```
+
+## Hardware Requirements
+- **Jetson Nano** or any compatible edge device.
+- **Camera**: Zavio camera or another compatible camera for video capture.
+
+## Future Enhancements
+- Integrate more anomaly categories.
+- Improve model accuracy with more diverse datasets.
+- Extend chatbot capabilities to handle more complex queries.
+
+## Contributing
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
