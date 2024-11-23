@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project implements an **Anomaly Detection System** leveraging **MobileNet** and **BiLSTM** (Bidirectional Long Short-Term Memory) networks for real-time anomaly detection in video feeds. Deployed on the **NVIDIA Jetson Nano**, the system utilizes an **IP camera** for continuous monitoring at **30 FPS**. Detected anomalies are uploaded to **Google Drive**, where they are stored in a structured database. **LLM Gemini** is employed to generate detailed reports, while **email warnings** are sent for immediate alerts.
+This project is my **graduation project** from the **National Telecommunication Institute (NTI)** as part of the **NTI 4-Month Training | Professional Training Program AI and Deep Learning Track**, **Nasr City Branch** (Aug 2024). It focuses on building an **Anomaly Detection System** leveraging **MobileNet** and **BiLSTM** (Bidirectional Long Short-Term Memory) networks for real-time anomaly detection in video feeds. Deployed on the **NVIDIA Jetson Nano**, the system utilizes an **IP camera** for continuous monitoring at **30 FPS**. Detected anomalies are uploaded to **Google Drive**, where they are stored in a structured database. **LLM Gemini** is employed to generate detailed reports, while **email warnings** are sent for immediate alerts.
 
 A **Retrieval-Augmented Generation (RAG)** powered **chatbot** allows users to interact with and query the stored reports, simplifying access to historical anomaly data.
 
