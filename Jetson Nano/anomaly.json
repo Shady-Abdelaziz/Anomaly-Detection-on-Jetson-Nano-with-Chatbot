@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "anomaly-detetion",
+  "private_key_id": "288d4259dfa90932084c8ccd4b0f808f59a6287a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCTOk4D8gtLuewn\nahK+6nJHvOk+APdT71a4qKejF8g5nenH3JC6jYsTiaPXAVgUzr64NU9e5yw1TxZl\nWllkDSMpcxndyp+QuLmwXvIvCOZwbAvYnuYuyNWoXkfzzmfmNrNcDANy/7Sl84gG\nyvwlfmdQtJHw5dB2vyzhzAoPUyszDv6HLcxMJhWHgDCPLkiUvDyKwsg4Ux0xk7nr\niUJLr+6GWrTmKYwewxKrw0/hTX/YSPRBjPJTFPFRF++apgFg8ilbrm68+CiYCxso\ntqkADc8d4SwMNsRFKDAAXUhqrvyJdEzG4EdlNkqbORVgmuCbQL61TJ8iWJMMaPAy\nKr7+5UoBAgMBAAECggEAM8ZSPzL0Y/oLIUU9OGRsMewuPf7K+3p0jdXJtiIb6J8u\n4nkfcGtsWD+UHX08g3y9NzyQH/i95DVe09+1BelUzzPKCeRCvvsnWe3Zz06a8zgb\n5l7i5dr8wAv/065nfV8JLjqPT/a6iY2d7X2etHTCUnBdzlCTQd8zImjFtOPzki2P\n/ubPMwKE59xyuefpqaETDml9Wunb1rRYurG8VbvuNLdJjh0ND9tcZKP9A0BXw5U0\nRCsYOi1tEGsoCSpYy+HEdKaXGV1NUOsPc9t40s3nsXmZeAuKBeQ64otUQIgXIVNP\nPuCH9b283DPswv/mwLvfp8zYVi5sqGUocJUO74DmTQKBgQDMJ1ILyxhDqtgWq3/p\nM/9OQkiCECa4mCU7u3DSsOnEbklU4bP0NIjvcQ1YvrkjIZcJCdRh9t+mHORK+9CQ\nhSbUkB2SxpYj6qD1x5ZY25Y6Ka0U1XaP7zRHxHziZTswRo/tvfD39W5MlbpBzNd5\nMaB5xKaT5fcRnHFuHxlwi6iFIwKBgQC4ng2DdT/k9oijMwRAU2Ox2gQoLwv2DIRN\nvx/maGAVwnovRbA31YSASjlc1bieHeiPOCDABT0LVg4/1hzaWKC6tDpdtmAqtTVE\n4cEwoHGOUYFVodckIsmn46gSzb5Eljepa9zfjnbSRM0AzDHAPsbMNrMVNddQ6OBn\n5Xyt3tcAiwKBgEpqltSnrmuUDfqNfy2xf4G2VZnba1HkW8YfOCwEwuGQVfiz4RXG\nRJgLPJM5ymCM8PIhfCJNjA6P/4N5sPfNIW9gLPeAnd/vucZ9f0dam7MN2AJ9IR+s\nUQFMFT2tKtsZDYPatcic1RzjgyZTFcQem+FnFlVZASuRPCOpAGvu7HnDAoGAPOUd\nTfwxvCM5hKNCRrl6y+I+tsZ16o3MYhyluAk7kFHanZcd/fy2vN4+t4ljYPw6hmsc\nGlpf/UpAXvwP/lF3ir4B9oE+jTfCP1s7rv9tFWV7BLTiUvAKlg84lCM7HEJ0T7Td\nYPwL42WAPUAdNO1AA4ITZe6he/Wkd4CxtGQphOsCgYA+ickwgoHz2SCZTDDhIEmK\n/crUUJRwogenDAVJG+yiEmPz3zudCXwkFhuRrJHorH8dBWzF9/LzQ/ahgn9v+sAS\nY3TGfKLV2BeB9ZvXy4YEE3/bth0LrMeFLWJgRB0b1tilqltry9h1TvOiqXaXRfvs\nsi6hxFsBkk6c+D3v+UwAUg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "anomaly@anomaly-detetion.iam.gserviceaccount.com",
+  "client_id": "116310408983352997626",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/anomaly%40anomaly-detetion.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
