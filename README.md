@@ -1,6 +1,6 @@
 # Anomaly Detection on Jetson Nano with Chatbot
 
-![Project Banner]([https://via.placeholder.com/800x200.png?text=Anomaly+Detection+on+Jetson+Nano](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Jetson%20Nano/jetson.jpg)) <!-- Replace with an actual banner image -->
+![Project Banner](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Jetson%20Nano/jetson.jpg?raw=true) <!-- Replace with an actual banner image -->
 
 ## Overview
 
@@ -28,11 +28,6 @@ This project is a real-time **Anomaly Detection System** designed to monitor vid
   - Allows users to interactively query stored reports for detailed insights.
 
 ---
-
-## Demo Video
-
-Watch the demo video explaining the entire project in action:
-
 
 ## Demo Video
 
