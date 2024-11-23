@@ -1,111 +1,101 @@
 # Anomaly Detection on Jetson Nano with Chatbot
 
-This project implements an anomaly detection system capable of identifying multiple classes of anomalies (e.g., fighting, robbery, vandalism) using a pre-trained model deployed on a Jetson Nano. The system integrates with a chatbot for reporting incidents and generating summaries via NLP.
+## Project Overview
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [Model Details](#model-details)
-- [Hardware Requirements](#hardware-requirements)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
+This project focuses on building an **Anomaly Detection System** using advanced deep learning architectures. It utilizes **MobileNet** and **BiLSTM** (Bidirectional Long Short-Term Memory) networks to detect anomalies in real-time video feeds. The system was deployed on the **NVIDIA Jetson Nano** and uses an **IP camera** for continuous monitoring at **30 FPS**. Detected anomalies are automatically uploaded to **Google Drive** and stored in a structured database, while **LLM Gemini** is used to generate detailed reports. In addition, the system sends **email warnings** for immediate alerts, enhancing situational awareness.
 
-## Overview
-This repository combines computer vision, anomaly detection, and natural language processing to detect and report unusual activities. Leveraging a Jetson Nano, the system processes live video streams, identifies anomalies, and triggers chatbot-generated reports using an LLM (Large Language Model).
+Furthermore, a **chatbot** powered by **Retrieval-Augmented Generation (RAG)** has been implemented, allowing users to query and interact with the generated reports, facilitating easier access to historical data and insights.
 
-### Key Highlights
-- Real-time video anomaly detection.
-- Supports 60 FPS for inference.
-- Generates 30-second video clips of detected anomalies.
-- Uses an LLM to summarize video content and produce detailed incident reports.
-- Compatible with Zavio cameras.
+### Key Features:
+- **Real-time Anomaly Detection**: Uses MobileNet and BiLSTM models for classifying anomalies in video streams.
+- **Jetson Nano Deployment**: Efficient deployment on Jetson Nano with 30 FPS for real-time monitoring.
+- **Google Drive Integration**: Automatically uploads detected anomalies and videos to Google Drive.
+- **LLM Gemini Model**: Generates comprehensive reports based on detected anomalies.
+- **Email Alerts**: Sends immediate email notifications for detected anomalies.
+- **Retrieval-Augmented Generation (RAG)** Chatbot: Allows interactive querying of stored reports.
 
-## Features
-- **Multi-Class Anomaly Detection**: Identifies activities like abuse, assault, robbery, vandalism, and more.
-- **Real-time Performance**: Achieve 60 FPS for live video inference.
-- **30-second Video Clips**: Saves and uploads a 30-second clip of detected events.
-- **Chatbot Integration**: Sends alerts and generates reports for detected anomalies.
+## Demo Video
 
-## Setup and Installation
+Watch the demo video showcasing the anomaly detection system in action:
+
+[![Anomaly Detection on Jetson Nano with Chatbot](https://img.youtube.com/vi/m2qBMKrWNKQ/0.jpg)](https://www.youtube.com/watch?v=m2qBMKrWNKQ)
+
+## System Architecture
+
+The architecture of the anomaly detection system involves the following components:
+1. **Anomaly Detection Model**: 
+   - **MobileNet** for feature extraction from video frames.
+   - **BiLSTM** for sequence modeling and anomaly classification.
+2. **Jetson Nano**:
+   - Deploys the model and performs real-time video processing.
+   - Operates at 30 FPS for continuous monitoring.
+3. **Cloud Integration**:
+   - Detected anomalies are uploaded to **Google Drive**, creating a structured repository of videos and reports.
+4. **LLM Gemini**:
+   - Generates detailed reports on the detected anomalies.
+5. **Retrieval-Augmented Generation (RAG)** Chatbot:
+   - Provides an interactive interface for querying and retrieving generated reports from the database.
+
+![Jetson Nano](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/raw/main/Jetson%20Nano/jetson.jpg?raw=true)
+
+## Setup & Installation
 
 ### Prerequisites
-- Jetson Nano with a compatible OS installed.
-- Zavio camera (or any compatible camera source).
-- Python 3.8 or higher.
-- Required Python libraries: OpenCV, TensorFlow, PyTorch, NLTK, and others listed in `requirements.txt`.
+- **NVIDIA Jetson Nano** with **JetPack** installed.
+- **IP Camera** for video streaming.
+- **Google Drive** account for video storage.
+- **Python 3.x** environment with necessary libraries.
 
-### Installation Steps
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot.git
-   cd Anomaly-Detection-on-Jetson-Nano-with-Chatbot
-   ```
+### Install Dependencies
+Clone the repository and install the required Python libraries:
 
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Set up your Jetson Nano for real-time video input:
-   - Ensure your camera is connected and accessible.
-
-4. Run the detection script:
-   ```bash
-   python detect_anomalies.py
-   ```
-
-## Usage
-
-After installation, you can start the anomaly detection system. When anomalies are detected, a report will be generated, and a chatbot will notify you with a summary of the event.
-
-### Run the chatbot integration:
 ```bash
-python chatbot_integration.py
+git clone https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot.git
+cd Anomaly-Detection-on-Jetson-Nano-with-Chatbot
+pip install -r requirements.txt
 ```
 
-### Configuration
+### Model Training
+To train the anomaly detection model, run the following command:
 
-Adjust the configuration settings in `config.json` to set video input, threshold for anomaly detection, and other parameters.
-
-## Model Details
-
-This project uses a pre-trained model for anomaly detection. The model is capable of recognizing various categories such as:
-
-- Abuse
-- Arrest
-- Arson
-- Assault
-- Burglary
-- Explosion
-- Fighting
-- Normal
-- RoadAccidents
-- Robbery
-- Shooting
-- Shoplifting
-- Stealing
-- Vandalism
-
-### Loading the model:
-```python
-from keras.models import load_model
-model = load_model('model.keras')
+```bash
+python train_model.py
 ```
 
-## Hardware Requirements
-- **Jetson Nano** or any compatible edge device.
-- **Camera**: Zavio camera or another compatible camera for video capture.
+This will train the **MobileNet** and **BiLSTM** models on the **UCF Anomaly Detection dataset**.
 
-## Future Enhancements
-- Integrate more anomaly categories.
-- Improve model accuracy with more diverse datasets.
-- Extend chatbot capabilities to handle more complex queries.
+### Deploying on Jetson Nano
+1. Transfer the trained models to the **Jetson Nano**.
+2. Configure the **IP camera** stream settings.
+3. Run the real-time anomaly detection system:
 
-## Contributing
-Contributions are welcome! Please feel free to submit issues or pull requests.
+```bash
+python detect_anomaly.py
+```
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Google Drive Integration
+To automatically upload detected anomalies to Google Drive, you will need to set up OAuth2 authentication. Follow the instructions in the [Google Drive API documentation](https://developers.google.com/drive/api/v3/quickstart-python) to create credentials.
+
+### Email Alerts
+Configure the email settings in the `config.py` file to enable the email alert feature for detected anomalies.
+
+### Chatbot Integration
+To use the chatbot for querying reports, run the chatbot server:
+
+```bash
+python chatbot.py
+```
+
+You can interact with the chatbot and query the stored reports from the Google Drive database.
+
+## Acknowledgments
+- **MobileNet** and **BiLSTM** models for anomaly detection.
+- **UCF Anomaly Detection Dataset** for training the models.
+- **NVIDIA Jetson Nano** for edge deployment.
+- **Google Drive API** for cloud integration.
+- **LLM Gemini** for report generation.
+- **Retrieval-Augmented Generation (RAG)** for chatbot functionality.
+
+## Conclusion
+
+This project demonstrates an end-to-end solution for real-time anomaly detection using the Jetson Nano platform. It combines deep learning, cloud integration, and natural language processing to create a robust system for monitoring and responding to anomalous events in video streams.
