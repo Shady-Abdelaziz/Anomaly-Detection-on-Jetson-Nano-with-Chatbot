@@ -34,7 +34,7 @@ This project is a real-time **Anomaly Detection System** designed to monitor vid
 Watch the demo video explaining the entire project:
 
 <video width="800" controls>
-  <source src="https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Anomaly%20Detection%20Demo.mp4?raw=true" type="video/mp4">
+  <source src="[https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Anomaly%20Detection%20Demo.mp4](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Anomaly%20Detection%20Demo.mp4)?raw=true" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
