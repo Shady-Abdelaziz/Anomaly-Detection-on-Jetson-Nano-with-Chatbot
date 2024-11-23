@@ -72,7 +72,7 @@ python infer_using_tensor_rt.py
 To automatically upload detected anomalies to Google Drive, set up **OAuth2 authentication** by following the steps in the [Google Drive API documentation](https://developers.google.com/drive/api/v3/quickstart-python) to create and authenticate your credentials.
 
 ### Email Alerts
-Configure email settings in the `config.py` file to enable the email alert system, which will notify you whenever an anomaly is detected.
+Configure email settings in the `infer.py` file to enable the email alert system, which will notify you whenever an anomaly is detected.
 
 ### Chatbot Integration
 To query the generated reports, use the **Anomaly_Chatbot_with_streamlit.ipynb** notebook on Google Colab. Open the notebook via this link:
