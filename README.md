@@ -20,7 +20,7 @@ A **Retrieval-Augmented Generation (RAG)** powered **chatbot** allows users to i
 
 Watch the demo video showcasing the anomaly detection system:
 
-[![Anomaly Detection on Jetson Nano with Chatbot](https://img.youtube.com/vi/m2qBMKrWNKQ/0.jpg)]([https://www.youtube.com/watch?v=m2qBMKrWNKQ](https://drive.google.com/file/d/1Hm5gzUa8XPqj8uXuWNbgL4Z5G1IwScvP/view?usp=sharing))
+[![Anomaly Detection on Jetson Nano with Chatbot](https://img.youtube.com/vi/m2qBMKrWNKQ/0.jpg)]([(https://drive.google.com/file/d/1Hm5gzUa8XPqj8uXuWNbgL4Z5G1IwScvP/view?usp=sharing)])
 
 ## System Architecture
 
