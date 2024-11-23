@@ -5,6 +5,7 @@
 This project focuses on building an **Anomaly Detection System** using advanced deep learning architectures. It utilizes **MobileNet** and **BiLSTM** (Bidirectional Long Short-Term Memory) networks to detect anomalies in real-time video feeds. The system was deployed on the **NVIDIA Jetson Nano** and uses an **IP camera** for continuous monitoring at **30 FPS**. Detected anomalies are automatically uploaded to **Google Drive** and stored in a structured database, while **LLM Gemini** is used to generate detailed reports. In addition, the system sends **email warnings** for immediate alerts, enhancing situational awareness.
 
 Furthermore, a **chatbot** powered by **Retrieval-Augmented Generation (RAG)** has been implemented, allowing users to query and interact with the generated reports, facilitating easier access to historical data and insights.
+![Jetson Nano](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/raw/main/Jetson%20Nano/jetson.jpg?raw=true)
 
 ### Key Features:
 - **Real-time Anomaly Detection**: Uses MobileNet and BiLSTM models for classifying anomalies in video streams.
@@ -36,7 +37,6 @@ The architecture of the anomaly detection system involves the following componen
 5. **Retrieval-Augmented Generation (RAG)** Chatbot:
    - Provides an interactive interface for querying and retrieving generated reports from the database.
 
-![Jetson Nano](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/raw/main/Jetson%20Nano/jetson.jpg?raw=true)
 
 ## Setup & Installation
 
