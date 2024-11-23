@@ -1,6 +1,6 @@
 # Anomaly Detection on Jetson Nano with Chatbot
 
-![Project Banner](https://via.placeholder.com/800x200.png?text=Anomaly+Detection+on+Jetson+Nano) <!-- Replace with an actual banner image -->
+![Project Banner]([https://via.placeholder.com/800x200.png?text=Anomaly+Detection+on+Jetson+Nano](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/blob/main/Jetson%20Nano/jetson.jpg)) <!-- Replace with an actual banner image -->
 
 ## Overview
 
