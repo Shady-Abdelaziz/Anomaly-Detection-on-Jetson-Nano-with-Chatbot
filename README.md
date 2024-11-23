@@ -5,6 +5,7 @@
 This project focuses on building an **Anomaly Detection System** using advanced deep learning architectures. It utilizes **MobileNet** and **BiLSTM** (Bidirectional Long Short-Term Memory) networks to detect anomalies in real-time video feeds. The system was deployed on the **NVIDIA Jetson Nano** and uses an **IP camera** for continuous monitoring at **30 FPS**. Detected anomalies are automatically uploaded to **Google Drive** and stored in a structured database, while **LLM Gemini** is used to generate detailed reports. In addition, the system sends **email warnings** for immediate alerts, enhancing situational awareness.
 
 Furthermore, a **chatbot** powered by **Retrieval-Augmented Generation (RAG)** has been implemented, allowing users to query and interact with the generated reports, facilitating easier access to historical data and insights.
+
 ![Jetson Nano](https://github.com/Shady-Abdelaziz/Anomaly-Detection-on-Jetson-Nano-with-Chatbot/raw/main/Jetson%20Nano/jetson.jpg?raw=true)
 
 ### Key Features:
@@ -59,8 +60,7 @@ pip install -r requirements.txt
 To train the anomaly detection model, run the following command:
 
 ```bash
-python train_model.py
-```
+real-time-violence-detection-mobilenet-bi-lstm.ipynb```
 
 This will train the **MobileNet** and **BiLSTM** models on the **UCF Anomaly Detection dataset**.
 
@@ -70,23 +70,23 @@ This will train the **MobileNet** and **BiLSTM** models on the **UCF Anomaly Det
 3. Run the real-time anomaly detection system:
 
 ```bash
-python detect_anomaly.py
+python infer onnx.py
+python infer using tensor rt.py
+
 ```
 
 ### Google Drive Integration
-To automatically upload detected anomalies to Google Drive, you will need to set up OAuth2 authentication. Follow the instructions in the [Google Drive API documentation](https://developers.google.com/drive/api/v3/quickstart-python) to create credentials.
+To enable automatic uploading of detected anomalies to Google Drive, you'll need to set up OAuth2 authentication. Follow the steps outlined in the [Google Drive API documentation](https://developers.google.com/drive/api/v3/quickstart-python) to create the necessary credentials and authenticate your application.
 
 ### Email Alerts
-Configure the email settings in the `config.py` file to enable the email alert feature for detected anomalies.
+Configure the email settings in the `config.py` file to activate the email alert system, which sends notifications whenever anomalies are detected in the video stream.
 
 ### Chatbot Integration
-To use the chatbot for querying reports, run the chatbot server:
+For querying the generated reports, use the **Anomaly_Chatbot_with_streamlit.ipynb** notebook on Google Colab. Simply follow this link to access the notebook:
 
-```bash
-python chatbot.py
-```
+[Open Chatbot Notebook on Google Colab](https://colab.research.google.com/drive/1vfAdMNh-1-NzTaeimjylcJF1qUOI2gkd?authuser=1#scrollTo=bOoM8l6pTFrt)
 
-You can interact with the chatbot and query the stored reports from the Google Drive database.
+Once you open the notebook, you can interact with the chatbot and query the stored reports from your Google Drive database.
 
 ## Acknowledgments
 - **MobileNet** and **BiLSTM** models for anomaly detection.
