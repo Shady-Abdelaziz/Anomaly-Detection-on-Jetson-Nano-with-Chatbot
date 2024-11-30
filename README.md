@@ -33,9 +33,10 @@ The system consists of the following components:
 5. **RAG Chatbot**: Provides an interface to query and retrieve reports stored in the cloud database.
 
 ## Setup & Installation
+
 ### Violence Detection Model
 
-This project uses a MobileNetV3 model to detect violent actions with a validation accuracy of 89%.
+This project uses a MobileNetV3 model to detect violent actions with a validation accuracy of 89%. The model is optimized for non-delay inference on the Jetson Nano.
 
 You can view the Kaggle notebook used for this project [here](https://www.kaggle.com/code/shadysakr/89-val-acc-violence-detection-mobilenet-v3).
 
