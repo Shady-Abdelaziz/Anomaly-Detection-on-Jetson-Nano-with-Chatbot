@@ -28,7 +28,7 @@ SAVE_BASE_DIR = r"/home/shady/Desktop/New/Anomaly_clips"
 
 # Email details
 EMAIL_ADDRESS = "anomalydetection81@gmail.com"
-EMAIL_PASSWORD = "qitv fkix vkev bdkl"
+EMAIL_PASSWORD = "****************"
 WARNING_RECIPIENT = "shady.sakr52@gmail.com"
 
 os.makedirs(SAVE_BASE_DIR, exist_ok=True)
